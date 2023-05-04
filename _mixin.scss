@@ -1,0 +1,18 @@
+@use 'variables' as *;
+
+@mixin socialLogo ($font-size, $width, $height) {
+    cursor: pointer;
+    background-color: $clr-MainDesign;
+    border-radius: 50%;
+    font-size: $font-size;
+    text-align: center;
+    width: $width;
+    height: $height;
+    padding: 1rem;
+    box-shadow: 2px 2px 9px 1px rgba(0, 0, 0, 0.17);
+    transition: all 0.4s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}

@@ -1,0 +1,264 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+
+
+* {
+    font-family: $ff-Primary;
+}
+
+html,
+body,
+h1,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.mainContainer {
+    margin-top: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $clr-MainDesign;
+        width: 20%;
+        height: 10px;
+
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $clr-MainDesign;
+        width: 50%;
+        height: 10px;
+    }
+
+    i {
+        @include socialLogo($fs-Medium, 31px, 31px);
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 48px;
+    }
+
+}
+
+.imageSide {
+    img {
+        animation: myAnim 20s linear 0s infinite normal forwards;
+    }
+
+    @keyframes myAnim {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        10%,
+        30%,
+        50%,
+        70% {
+            transform: translateY(-8px);
+        }
+
+        20%,
+        40%,
+        60% {
+            transform: translateY(8px);
+        }
+
+        80% {
+            transform: translateY(6.4px);
+        }
+
+        90% {
+            transform: translateY(-6.4px);
+        }
+    }
+}
+
+.contactSide {
+
+
+    h1 {
+        color: $clr-MainDesign;
+        font-size: $fs-ExtraBig;
+        font-weight: $fw-ExtraBold800;
+    }
+
+    p {
+        font-size: $fs-MediumLight;
+        margin-bottom: 32px;
+    }
+
+    form {
+
+        .formSection {
+            max-width: 620px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            row-gap: 0;
+
+
+            label {
+                display: block;
+                font-weight: $fw-SemiBold600;
+                margin-top: 16px;
+            }
+
+            input {
+                border: none;
+                background-color: $clr-BackDesign;
+                border-bottom: 2px solid $clr-MainDesign;
+                height: 35px;
+                width: 300px;
+
+                &:focus {
+                    outline: none !important;
+                }
+            }
+
+            textarea {
+                border: none;
+                background-color: $clr-BackDesign;
+                border-bottom: 2px solid $clr-MainDesign;
+                height: 140px;
+                width: 620px;
+
+                &:focus {
+                    outline: none !important;
+                }
+            }
+
+        }
+
+        button {
+            display: block;
+            margin-top: 32px;
+            cursor: pointer;
+            border: none;
+            background-color: $clr-MainDesign;
+            font-size: $fs-Small;
+            font-weight: $fw-SemiBold600;
+            padding: 6.4px 32px;
+        }
+
+    }
+}
+
+
+
+.contactSocial {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    gap: 16px;
+    margin: 48px;
+
+    i {
+        @include socialLogo($fs-MediumLight, 23px, 23px);
+    }
+}
+
+
+
+/////////////media query///////////////
+
+@media (min-width:350px) and (max-width:600px) {
+
+    .mainContainer {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 2vh;
+
+        i {
+            display: none;
+        }
+    }
+
+    .imageSide {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 20%;
+        }
+    }
+
+    .contactSide {
+        width: 100%;
+        text-align: center;
+
+        h1 {
+            font-size: $fs-Medium;
+        }
+
+        p {
+            font-size: $fs-Small;
+            margin: 0 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .formSection {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+
+                label {
+                    font-size: $fs-ExtraSmall;
+                    margin-top: 3.2px;
+                }
+
+                input {
+                    height: 30px;
+
+                }
+
+
+                textarea {
+                    height: 90px;
+                    width: 100%;
+
+                }
+
+                button {
+                    width: 100%;
+                    margin-top: 8px;
+                }
+
+            }
+
+        }
+    }
+
+    .contactSocial {
+        position: static;
+        justify-content: center;
+        align-items: flex-end;
+        height: 10vh;
+        margin: 0.7rem;
+
+
+        i {
+            @include socialLogo($fs-Small, 16px, 16px);
+        }
+    }
+
+}

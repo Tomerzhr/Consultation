@@ -1,0 +1,229 @@
+* {
+  font-family: "Heebo", sans-serif;
+}
+
+html,
+body,
+h1,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.mainContainer {
+  margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+.mainContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FDBD03;
+  width: 20%;
+  height: 10px;
+}
+.mainContainer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #FDBD03;
+  width: 50%;
+  height: 10px;
+}
+.mainContainer i {
+  cursor: pointer;
+  background-color: #FDBD03;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+  width: 31px;
+  height: 31px;
+  padding: 1rem;
+  box-shadow: 2px 2px 9px 1px rgba(0, 0, 0, 0.17);
+  transition: all 0.4s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 48px;
+}
+.mainContainer i:hover {
+  transform: scale(1.2);
+}
+
+.imageSide img {
+  animation: myAnim 20s linear 0s infinite normal forwards;
+}
+@keyframes myAnim {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  10%, 30%, 50%, 70% {
+    transform: translateY(-8px);
+  }
+  20%, 40%, 60% {
+    transform: translateY(8px);
+  }
+  80% {
+    transform: translateY(6.4px);
+  }
+  90% {
+    transform: translateY(-6.4px);
+  }
+}
+
+.contactSide h1 {
+  color: #FDBD03;
+  font-size: 3.8rem;
+  font-weight: 800;
+}
+.contactSide p {
+  font-size: 1.3rem;
+  margin-bottom: 32px;
+}
+.contactSide form .formSection {
+  max-width: 620px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  row-gap: 0;
+}
+.contactSide form .formSection label {
+  display: block;
+  font-weight: 600;
+  margin-top: 16px;
+}
+.contactSide form .formSection input {
+  border: none;
+  background-color: #E5EEFF;
+  border-bottom: 2px solid #FDBD03;
+  height: 35px;
+  width: 300px;
+}
+.contactSide form .formSection input:focus {
+  outline: none !important;
+}
+.contactSide form .formSection textarea {
+  border: none;
+  background-color: #E5EEFF;
+  border-bottom: 2px solid #FDBD03;
+  height: 140px;
+  width: 620px;
+}
+.contactSide form .formSection textarea:focus {
+  outline: none !important;
+}
+.contactSide form button {
+  display: block;
+  margin-top: 32px;
+  cursor: pointer;
+  border: none;
+  background-color: #FDBD03;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 6.4px 32px;
+}
+
+.contactSocial {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  gap: 16px;
+  margin: 48px;
+}
+.contactSocial i {
+  cursor: pointer;
+  background-color: #FDBD03;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 23px;
+  height: 23px;
+  padding: 1rem;
+  box-shadow: 2px 2px 9px 1px rgba(0, 0, 0, 0.17);
+  transition: all 0.4s;
+}
+.contactSocial i:hover {
+  transform: scale(1.2);
+}
+
+@media (min-width: 350px) and (max-width: 600px) {
+  .mainContainer {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2vh;
+  }
+  .mainContainer i {
+    display: none;
+  }
+  .imageSide {
+    display: flex;
+    justify-content: center;
+  }
+  .imageSide img {
+    width: 20%;
+  }
+  .contactSide {
+    width: 100%;
+    text-align: center;
+  }
+  .contactSide h1 {
+    font-size: 2rem;
+  }
+  .contactSide p {
+    font-size: 1rem;
+    margin: 0 1rem;
+  }
+  .contactSide form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contactSide form .formSection {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactSide form .formSection label {
+    font-size: 0.8rem;
+    margin-top: 3.2px;
+  }
+  .contactSide form .formSection input {
+    height: 30px;
+  }
+  .contactSide form .formSection textarea {
+    height: 90px;
+    width: 100%;
+  }
+  .contactSide form .formSection button {
+    width: 100%;
+    margin-top: 8px;
+  }
+  .contactSocial {
+    position: static;
+    justify-content: center;
+    align-items: flex-end;
+    height: 10vh;
+    margin: 0.7rem;
+  }
+  .contactSocial i {
+    cursor: pointer;
+    background-color: #FDBD03;
+    border-radius: 50%;
+    font-size: 1rem;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    padding: 1rem;
+    box-shadow: 2px 2px 9px 1px rgba(0, 0, 0, 0.17);
+    transition: all 0.4s;
+  }
+  .contactSocial i:hover {
+    transform: scale(1.2);
+  }
+}/*# sourceMappingURL=main.css.map */
