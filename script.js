@@ -2,48 +2,53 @@ const formField = document.querySelector(".form-field");
 const emailInput = document.forms["form-field"]["email"];
 const nameInput = document.forms["form-field"]["fullName"];
 const massageInput = document.forms["form-field"]["massage"];
+const formBtn = document.querySelector(".formBtn");
 
-function nameValidation(name) {
-  let nameRegex = /^[a-zA-Z\u0590-\u05FF\u200f\u200e ]+$/;
-  return name.match(nameRegex);
-}
-function emailValidation(email) {
-  let emailRegex = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  return email.match(emailRegex);
-}
-function massageValidation(massage) {
-  let massageRegex = /^[a-zA-Z\u0590-\u05FF\u200f\u200e ]{10,60}$/;
-  return massage.match(massageRegex);
-}
+formBtn.disabled = true;
 
-function formValidation(e) {
-  const name = document.forms["form-field"]["fullName"].value;
-  const email = document.forms["form-field"]["email"].value;
-  const massage = document.forms["form-field"]["massage"].value;
+nameInput.addEventListener("input", formValidation);
+emailInput.addEventListener("input", formValidation);
+massageInput.addEventListener("input", formValidation);
+
+formBtn.addEventListener("click", (e) => {
   e.preventDefault();
-
-  if (!nameValidation(name)) {
-    nameInput.style.borderColor = "red";
-    return;
-  } else {
-    nameInput.style.borderColor = "#FDBD03";
-  }
-  if (!emailValidation(email)) {
-    emailInput.style.borderColor = "red";
-    return;
-  } else {
-    emailInput.style.borderColor = "#FDBD03";
-  }
-  if ((massage.length = 0 || !massageValidation(massage))) {
-    massageInput.style.borderColor = "red";
-    return;
-  } else {
-    massageInput.style.borderColor = "#FDBD03";
-  }
   document.querySelector(".confirmation-message").style.display = "block";
   nameInput.value = "";
   emailInput.value = "";
-  massageInput.value = "";
+});
+
+function nameValidation(name) {
+  let nameRegex = /^[a-zA-Zֿֿֿֿ\s]+$/;
+  if (nameRegex.test(name.value) === false || name.value === "" || name.value == null || name.value.length < 5) {
+    nameInput.style.borderColor = "red";
+  } else {
+    nameInput.style.borderColor = "#fdbd03";
+    return true;
+  }
 }
 
-formField.addEventListener("click", formValidation);
+function emailValidation(email) {
+  let emailRegex = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  if (emailRegex.test(email.value) === false || email.value === "" || email.value == null) {
+    emailInput.style.borderColor = "red";
+  } else {
+    emailInput.style.borderColor = "#fdbd03";
+    return true;
+  }
+}
+
+function massageValidation(massage) {
+  let massageRegex = /^[a-zA-Zֿֿֿֿ\s]+$/;
+  if (massageRegex.test(massage.value) === false || massage.value === "" || massage.value == null || massage.value.length < 10) {
+    massageInput.style.borderColor = "red";
+  } else {
+    massageInput.style.borderColor = "#fdbd03";
+    return true;
+  }
+}
+
+function formValidation() {
+  if (nameValidation(nameInput) && emailValidation(emailInput) && massageValidation(massageInput)) {
+    formBtn.disabled = false;
+  }
+}
