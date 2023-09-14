@@ -39,7 +39,7 @@
             <p>ייעוץ לימודים חינם בלחיצת כפתור קטנה בשיחה עם מומחה בתחום <br>מלאו את הפרטים
                 למטה ונחזור אליכם.</p>
 
-            <form action="mailto:tomerzhr@gmail.com" method="post">
+                <form action="mailto:tomerzhr@gmail.com" class="form-field" name="form-field">
 
                 <div class="formSection">
 
@@ -50,13 +50,15 @@
 
                     <div class="formClass">
                         <label for="email">דוא״ל</label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" autocomplete="address-level1" required>
                     </div>
 
-                    <label for="massege">תוכן ההודעה</label>
-                    <textarea name="massege" id="massege" cols="30" rows="10"></textarea>
+                    <label for="massage">תוכן ההודעה</label>
+                    <textarea name="massage" id="massage" cols="30" rows="10"></textarea>
 
+                    <p class="confirmation-message">פרטייך התקבלו בהצלחה, נציג יחזור אליכם!</p>
                     <button type="submit">שליחה</button>
+
 
                 </div>
 
@@ -94,7 +96,7 @@
 
 
 
-
+<script src="script.js"></script>
 
 </body>
 

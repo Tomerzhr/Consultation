@@ -117,9 +117,15 @@ p {
 .contactSide form .formSection textarea:focus {
   outline: none !important;
 }
+.contactSide form .formSection .confirmation-message {
+  display: none;
+  font-size: 1rem;
+  margin: 0;
+  width: 600px;
+}
 .contactSide form button {
   display: block;
-  margin-top: 32px;
+  margin-top: 5px;
   cursor: pointer;
   border: none;
   background-color: #FDBD03;
@@ -203,6 +209,9 @@ p {
   .contactSide form .formSection button {
     width: 100%;
     margin-top: 8px;
+  }
+  .contactSide form .formSection .confirmation-message {
+    width: auto;
   }
   .contactSocial {
     position: static;

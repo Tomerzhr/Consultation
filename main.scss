@@ -127,6 +127,7 @@ p {
                 &:focus {
                     outline: none !important;
                 }
+            
             }
 
             textarea {
@@ -141,17 +142,27 @@ p {
                 }
             }
 
+            .confirmation-message{
+                display: none;
+                font-size: 1rem;
+                margin: 0;
+                width: 600px;
+
+
+            }
+
         }
 
         button {
             display: block;
-            margin-top: 32px;
+            margin-top: 5px;
             cursor: pointer;
             border: none;
             background-color: $clr-MainDesign;
             font-size: $fs-Small;
             font-weight: $fw-SemiBold600;
             padding: 6.4px 32px;
+            
         }
 
     }
@@ -241,6 +252,10 @@ p {
                 button {
                     width: 100%;
                     margin-top: 8px;
+                }
+
+                .confirmation-message{
+                    width: auto;
                 }
 
             }
